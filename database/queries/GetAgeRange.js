@@ -24,5 +24,5 @@ module.exports = () => {
                 min: result[0],
                 max: result[1]
             }
-        })
+        });
 };
