@@ -10,15 +10,15 @@ module.exports = () => {
         .find({})
         .sort({ age: 1 })
         .limit(1)
-        .then(artists => artist[0].yearsActive);
+        .then(artists => artists[0].yearsActive);
 
     const maxQuery = Artist
         .find({})
         .sort({ age: -1 })
         .limit(1)
-        .then(artists => artist[0].yearsActive);
+        .then(artists => artists[0].yearsActive);
 
-    return Promise.all([minQuery(), maxQuery()])
+    return Promise.all([minQuery, maxQuery])
         .then((result) => {
             return {
                 min: result[0],
