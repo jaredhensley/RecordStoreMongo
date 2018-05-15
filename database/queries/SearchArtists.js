@@ -30,7 +30,7 @@ module.exports = (criteria, sortProperty, offset = 0, limit = 20) => {
 const buildQuery = (criteria) => {
     const query = {};
 
-    // requries text index in db
+    // requries text index in mongodb
     if (criteria.name) {
         query.$text = { $search: criteria.name };
     }
